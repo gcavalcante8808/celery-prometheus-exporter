@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  BROKER_URL: {{ .Values.broker_url }}
+  {{ if .Values.queue_list }}
+  QUEUE_LIST: {{ .Values.queue_list }}
+  {{ end }}

@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: zerok/celery-prometheus-exporter
+  tag: 1.6.0-celery3
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8888
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8888"
+
+broker_url: "redis://cache:6379/0"
+timezone: ""
+queue_list: []
+
+ingress:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
