@@ -29,8 +29,9 @@ To install the chart with the release name `my-release` and monitor the queues `
         --install --force my-release \
         --set broker_url=redis://cache:6379/0 \
         --set queue_list="default\,zone1" \
-        --set timezone="America/Sao+Paulo" \
+        --set timezone="America/Sao_Paulo" \
         .
+```
 
 > **Tip**: List all releases using `helm list`
 
